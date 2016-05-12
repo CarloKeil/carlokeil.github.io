@@ -3,34 +3,235 @@
     <style>
         .carlocard .card-text
         {
-            min-height: 75px !important;
+            min-height: 120px !important;
         }
         .carlocard .card-title
         {
             min-height: 60px !important;
         }
-        #carousel-example-generic
-        {
-            margin-bottom: 100px;
+        /* Grow */
+        .hvr-grow {
+          display: inline-block;
+          vertical-align: middle;
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          -webkit-transition-property: transform;
+          transition-property: transform;
         }
+        .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+        }
+
+        .certificate
+        {
+            height: 274px;
+        }
+
+        @media screen and (max-width: 860px) {
+            .certificate{
+                height: 450px;
+            }
+        }
+
+        .cards 
+        {
+            height: 300px;
+        }
+
+        .swiper-pagination 
+        {
+            position: relative !important;
+            margin-top: 10px;
+        }
+        
+        .swiper-pagination-bullet
+        {
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+        .swiper-slide > .row > .col-lg-3 
+        {
+            width: 21%;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+        .cards .swiper-slide
+        {
+            background-color: #373a3c;
+        }
+
+        @media screen and (max-width: 992px) {
+            .swiper-slide > .row > .col-lg-3 
+            {
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+                float: left;
+            }
+            .cards{
+                height: 600px;
+            }
+            .container-cards{
+                margin-bottom: 20px !important;
+            }
+
+        }
+        @media screen and (max-width: 767px) {
+            .swiper-slide > .row > .col-lg-3 {
+                width: 94%;
+                padding-left: 3%;
+                padding-right: 3%;
+                float: left;
+            }
+            .cards{
+                height: 1200px;
+            }
+        }
+
+        .cardsnext, .cardsprev {
+            position: relative;
+            top: initial;
+            background-image: initial !important;
+        }
+        .cardsnext {
+            right: initial !important;
+            left: 105% !important;
+        }
+        .cardsprev {
+            right: 105% !important;
+            left: initial !important;
+        }
+
+        @media screen and (max-width: 767px) {
+            .swiper-slide > .row > .col-lg-3 {
+                width: 94%;
+                padding-left: 3%;
+                padding-right: 3%;
+                float: left;
+            }
+            .cards{
+                height: 1200px;
+            }
+        }
+
+        @media screen and (max-width: 1110px) and (min-width: 992px) {
+            .cardsnext {
+                left: 100% !important;
+            }
+            .cardsprev {
+                right: 100% !important;
+            }
+        }
+
+        @media screen and (max-width: 870px) and (min-width: 767px){
+            .cardsnext {
+                right: 10px !important;
+                left: auto !important;
+            }
+            .cardsprev {
+                right: auto!important;
+                left: 10px !important;
+            }
+        }
+
+        @media screen and (max-width: 710px) {
+            .cardsnext {
+                right: 10px !important;
+                left: auto !important;
+            }
+            .cardsprev {
+                right: auto!important;
+                left: 10px !important;
+            }
+        }
+
+        .dog-jumbo {margin-top: 69px; background-size: cover; background-image: url('dog.jpg'); background-position: 0% 15%;}
+
+        .jumbotron h1, .jumbotron p {
+            color: lightgray;
+            font-family: Raleway;
+            text-shadow: 1px 1px 1px #000;
+        }
+
+        @media screen and (max-width: 860px) {
+            .dog-jumbo {
+                background-position: 20% 10%;
+            }
+        }
+
+        body {
+            background-color: #373a3c !important;
+        }
+
+        .card {
+            background-color: #333 !important;
+            border: 1px solid #111 !important;
+            color: white;
+            font-family: Lato;
+        }
+
+        .navbar-brand {
+            font-family: Raleway;
+            font-size: 30px !important;
+        }
+
+        .cardsnext .octicon, .cardsprev .octicon {
+            font-size: 50px;
+            color: white;
+            width: 50px;
+        }
+        
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-text-rotator/1.0.0/simpletextrotator.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css">
     <title>Carlo's Git Website</title>
 </head>
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-text-rotator/1.0.0/jquery.simple-text-rotator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('.tooltipped').tooltipster(
+            );
+        });
+
+        $(document).ready(function () {
+            $('.cardtooltip').tooltipster({
+                content: $('<img src="https://images.unsplash.com/photo-1459664018906-085c36f472af?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=0790a8686cb07ac8851066ef544f1082" style="height: 100px"></img><br/></br><p>Like so!</p>')
+            });
+        });
+
+        $(document).ready(function () {
+            $('.octicontooltip').tooltipster({
+                content: $('<span>This is an Octicon, a type of icon recommended for use with Bootstrap! </br>I know how to implement Octicons into a page to give it a great look.</span>')
+            });
+        });
+    </script>
     <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
         <div class="nav navbar-nav">
-            <a class="navbar-brand" href="#">Carlo Keil</a>
+            <a class="navbar-brand rotate" href="#">Carlo Keil,My Website,WIP</a>
         </div>
     </nav>
-    <div class="jumbotron jumbotron-fluid" style="margin-top: 50px">
+    <div>
+    <div class="jumbotron dog-jumbo jumbotron-fluid">
         <div class="container">
-            <h1 style="text-align: center;" class="display-3">Carlo Keil, Coder.</h1>
-            <p style="text-align: center;" class="lead">Check out my certifications:</p>
             <div class="row">
-                <span class="col-md-1 col-lg-3"></span>
-                <div id="carousel-example-generic" class="carousel slide col-md-10 col-lg-6" style="padding: 0px;" data-ride="carousel">
+                <span class="col-md-4 col-lg-6"></span>
+                <!--<div id="carousel-example-generic" class="carousel slide col-md-10 col-lg-6" style="padding: 0px;" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -51,83 +252,159 @@
                         <span class="icon-next" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                </div>
-                <span class="col-md-1 col-lg-3"></span>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
-                <div class="carlocard card card-block">
-                    <h3 class="card-title">Blogger Portfolio</h3>
-                    <p class="card-text">I have a portfolio uploaded to Blogger.</p>
-                    <a href="http://carlokeilcoder.blogspot.com/" class="btn btn-primary">Go to my Portfolio!</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
-                <div class="carlocard card card-block">
-                    <h3 class="card-title">CodePen</h3>
-                    <p class="card-text">I create some interesting pens from time to time.</p>
-                    <a href="http://codepen.io/CarloK/" class="btn btn-primary">Go to my CodePen!</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
-                <div class="carlocard card card-block">
-                    <h3 class="card-title">GitHub</h3>
-                    <p class="card-text">If I create something interesting I often put it in a repository.</p>
-                    <a href="https://github.com/CarloKeil" class="btn btn-primary">Go to my GitHub!</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
-                <div class="carlocard card card-block">
-                    <h3 class="card-title">LinkedIn</h3>
-                    <p class="card-text">My LinkedIn contains all my certificates.</p>
-                    <a href="https://ph.linkedin.com/in/carlo-keil-724887b4" class="btn btn-primary">Go to my LinkedIn!</a>
+                </div>-->
+                <div class="col-md-8 col-lg-6 jumbomain">
+                    <h1 style="text-align: center;" class="display-3">Carlo Keil, <span class="mainrotate">Web|C#|.NET</span> Coder.</h1>
+                    <p style="text-align: center;" class="lead"><span class="mega-octicon octicon-verified octicontooltip"></span> Check out my certifications:</p>
+                    <div color class="swiper-container certificate">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;" >
+                                <div style="align-self: flex-start;"></div>
+                                <img style="width: 100%" class="tooltipped" title="I have successfully completed the requirements to be recognized as a Microsoft Specialist: Programming in HTML5 with Javascript and CSS3." src='https://lh3.googleusercontent.com/-K4llDmvNGiM/VvC77-Kd6BI/AAAAAAAABZg/FzfR6teJfqYj0AY_PeWkNRJTsxs8V6aRACCo/s2048/Microsoft%2BSpecialist%2BHTMLCSSJS.jpg' />
+                                <div style="align-self: flex-end;"></div>
+                            </div>
+                            <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;">
+                                <div style="align-self: flex-start;"></div>
+                                <img style="width: 100%" class="tooltipped" title="I have successfully completed the requirements to be recognized as a Microsoft Certified Professional." src='https://lh3.googleusercontent.com/-fd1itcnGZNo/VvC776tjjjI/AAAAAAAABZg/m-B0wmXvK9kd4XhqlOAUAhDeFFkORN_FQCCo/s2048/MCP.jpg' />
+                                <div style="align-self: flex-end;"></div>
+                            </div>
+                            <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;">
+                                <div style="align-self: flex-start;"></div>
+                                <img style="width: 100%" src='https://lh3.googleusercontent.com/-K4llDmvNGiM/VvC77-Kd6BI/AAAAAAAABZg/FzfR6teJfqYj0AY_PeWkNRJTsxs8V6aRACCo/s2048/Microsoft%2BSpecialist%2BHTMLCSSJS.jpg' />
+                                <div style="align-self: flex-end;"></div>
+                            </div>
+                            <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;">
+                                <div style="align-self: flex-start;"></div>
+                                <img style="width: 100%" src='https://lh3.googleusercontent.com/-K4llDmvNGiM/VvC77-Kd6BI/AAAAAAAABZg/FzfR6teJfqYj0AY_PeWkNRJTsxs8V6aRACCo/s2048/Microsoft%2BSpecialist%2BHTMLCSSJS.jpg' />
+                                <div style="align-self: flex-end;"></div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination certificatepage"></div>
+                    </div>
                 </div>
             </div>
         </div>
+        </div>
+    <div class="container container-cards" style="padding: 0px !important;">
+        <div color class="swiper-container cards">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="display: flex; justify-content: center;">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                            <div class="carlocard card card-block">
+                                <h3 class="card-title">Blogger Portfolio</h3>
+                                <p class="card-text">I have a portfolio uploaded to Blogger.</p>
+                                <a href="http://carlokeilcoder.blogspot.com/" class="btn btn-primary hvr-grow">Check it out!</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                            <div class="carlocard card card-block">
+                                <h3 class="card-title">CodePen</h3>
+                                <p class="card-text">I create some interesting pens from time to time.</p>
+                                <a href="http://codepen.io/CarloK/" class="btn btn-primary hvr-grow">Check it out!</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                            <div class="carlocard card card-block">
+                                <h3 class="card-title">GitHub</h3>
+                                <p class="card-text">If I create something interesting I often put it in a repository.</p>
+                                <a href="https://github.com/CarloKeil" class="btn btn-primary hvr-grow">Check it out!</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                            <div class="carlocard card card-block">
+                                <h3 class="card-title">LinkedIn</h3>
+                                <p class="card-text">My LinkedIn contains all my certificates.</p>
+                                <a href="https://ph.linkedin.com/in/carlo-keil-724887b4" class="btn btn-primary hvr-grow">Check it out!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="display: flex; justify-content: center;">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                            <div class="carlocard card card-block">
+                                <h3 class="card-title"><span class="rotate">Wonderful, Great, Magical</span> rotating text!</h3>
+                                <p class="card-text">I can add rotating text to your website using the jQuery Super Simple Text Rotator, by Pete R.</p>
+                                <a href="http://www.thepetedesign.com/demos/jquery_super_simple_text_rotator_demo.html" class="btn btn-primary hvr-grow">Check that out!</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                            <div class="carlocard card card-block">
+                                <h3 class="card-title">Swiper</h3>
+                                <p class="card-text">I can create carousels with lots of customizability using Swiper.</p>
+                                <a href="http://idangero.us/swiper" class="btn btn-primary hvr-grow">Check that out!</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                            <div class="carlocard card card-block">
+                                <h3 class="card-title">Bootstrap v4</h3>
+                                <p class="card-text">I can make any website look nice and modern using Bootstrap v4.</p>
+                                <a href="http://v4-alpha.getbootstrap.com/" class="btn btn-primary hvr-grow">Check that out!</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                            <div class="carlocard card card-block">
+                                <h3 class="card-title">Tooltipster</h3>
+                                <p class="card-text cardtooltip">I can create tooltips that display HTML code and images. <small>Hover over me!</small></p>
+                                <a href="http://iamceege.github.io/tooltipster/" class="btn btn-primary hvr-grow">Check that out!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination cardspage" style="margin-bottom: 30px;"></div>
+            <div class="swiper-button-next cardsnext"><span class="octicon octicon-chevron-right"></span></div>
+            <div class="swiper-button-prev cardsprev"><span class="octicon octicon-chevron-left"></span></div>
+        </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
     <script>
         // Tutorial I used at: http://webbb.be/blog/trigger-css-animation-scroll/
 
-        $(function () {
-            var $window = $(window),
-                  win_height_padded = $window.height() * 1.1,
-                  isTouch = Modernizr.touch;
+        $(".rotate").textrotator({
+            animation: "dissolve",
+            separator: ",",
+            speed: 2000
+        });
 
-            $window.on('scroll', revealOnScroll);
+        $(".mainrotate").textrotator({
+            animation: "flip",
+            separator: "|",
+            speed: 2000
+        });
 
-            function revealOnScroll() {
-                var scrolled = $window.scrollTop();
-                $(".revealOnScroll:not(.animated)").each(function () {
-                    var $this = $(this),
-                        offsetTop = $this.offset().top;
-
-                    if (scrolled + win_height_padded > offsetTop) {
-                        if ($this.data('timeout')) {
-                            window.setTimeout(function () {
-                                $this.addClass('animated ' + $this.data('animation'));
-                            }, parseInt($this.data('timeout'), 10));
-                        } else {
-                            $this.addClass('animated ' + $this.data('animation'));
-                        }
-                    }
-                });
-
-                $(".revealOnScroll.animated").each(function (index) {
-                    var $this = $(this),
-                        offsetTop = $this.offset().top;
-                    if (scrolled + win_height_padded < offsetTop) {
-                        $(this).removeClass('animated rubberBand hinge flip wobble jello tada swing')
-                    }
-                });
+        var swiper = new Swiper('.certificate', {
+            pagination: '.certificatepage',
+            slidesPerView: 2,
+            paginationClickable: true,
+            spaceBetween: 20,
+            breakpoints: {
+                860: {
+                    slidesPerView: 1,
+                }
             }
         });
+
+        var cardsswiper = new Swiper('.cards', {
+            pagination: '.cardspage',
+            effect: 'cube',
+            slidesPerView: 1,
+            paginationClickable: true,
+            grabCursor: true,
+            loop: true,
+            nextButton: '.cardsnext',
+            prevButton: '.cardsprev',
+            cube: {
+                shadow: false,
+                slideShadows: false,
+                shadowOffset: 20,
+                shadowScale: 0.94
+            }
+        });
+
+
     </script>
 </body>
 </html>
