@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <style>
@@ -183,6 +184,22 @@
             color: white;
             width: 50px;
         }
+
+        .container-other {
+            color: white;
+        }
+
+        .jumbotron-footer {
+            border-top: 1px solid #111 !important;
+            margin-bottom: 0px !important;
+            background-color: #333 !important;
+            margin-top: 100px;
+        }
+
+        .navbar {
+            border-bottom: 1px solid #111 !important;
+            background-color: #333 !important;
+        }
         
 
     </style>
@@ -203,6 +220,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.tooltipped').tooltipster(
@@ -270,12 +289,12 @@
                             </div>
                             <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;">
                                 <div style="align-self: flex-start;"></div>
-                                <img style="width: 100%" src='https://lh3.googleusercontent.com/-K4llDmvNGiM/VvC77-Kd6BI/AAAAAAAABZg/FzfR6teJfqYj0AY_PeWkNRJTsxs8V6aRACCo/s2048/Microsoft%2BSpecialist%2BHTMLCSSJS.jpg' />
+                                <img style="width: 100%" class="tooltipped" title="I have successfully completed and received a passing grade in HTML5.1x: HTML5 Part 1: HTML5 Coding Essentials and Best Practices, a course of study offered by W3Cx." src='html5point1x.jpg' />
                                 <div style="align-self: flex-end;"></div>
                             </div>
                             <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;">
                                 <div style="align-self: flex-start;"></div>
-                                <img style="width: 100%" src='https://lh3.googleusercontent.com/-K4llDmvNGiM/VvC77-Kd6BI/AAAAAAAABZg/FzfR6teJfqYj0AY_PeWkNRJTsxs8V6aRACCo/s2048/Microsoft%2BSpecialist%2BHTMLCSSJS.jpg' />
+                                <img style="width: 100%" class="tooltipped" title="I have successfully completed and received a passing grade in HTML5.2x: HTML5 Part 2: Advanced Techniques for Designing HTML5 Apps, a course of study offered by W3Cx." src='html5point2x.jpg' />
                                 <div style="align-self: flex-end;"></div>
                             </div>
                             </div>
@@ -292,28 +311,28 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide" style="display: flex; justify-content: center;">
                     <div class="row">
-                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
                             <div class="carlocard card card-block">
                                 <h3 class="card-title">Blogger Portfolio</h3>
                                 <p class="card-text">I have a portfolio uploaded to Blogger.</p>
                                 <a href="http://carlokeilcoder.blogspot.com/" class="btn btn-primary hvr-grow">Check it out!</a>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
                             <div class="carlocard card card-block">
                                 <h3 class="card-title">CodePen</h3>
                                 <p class="card-text">I create some interesting pens from time to time.</p>
                                 <a href="http://codepen.io/CarloK/" class="btn btn-primary hvr-grow">Check it out!</a>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
                             <div class="carlocard card card-block">
                                 <h3 class="card-title">GitHub</h3>
                                 <p class="card-text">If I create something interesting I often put it in a repository.</p>
                                 <a href="https://github.com/CarloKeil" class="btn btn-primary hvr-grow">Check it out!</a>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
                             <div class="carlocard card card-block">
                                 <h3 class="card-title">LinkedIn</h3>
                                 <p class="card-text">My LinkedIn contains all my certificates.</p>
@@ -324,28 +343,28 @@
                 </div>
                 <div class="swiper-slide" style="display: flex; justify-content: center;">
                     <div class="row">
-                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
                             <div class="carlocard card card-block">
                                 <h3 class="card-title"><span class="rotate">Wonderful, Great, Magical</span> rotating text!</h3>
                                 <p class="card-text">I can add rotating text to your website using the jQuery Super Simple Text Rotator, by Pete R.</p>
                                 <a href="http://www.thepetedesign.com/demos/jquery_super_simple_text_rotator_demo.html" class="btn btn-primary hvr-grow">Check that out!</a>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
                             <div class="carlocard card card-block">
                                 <h3 class="card-title">Swiper</h3>
                                 <p class="card-text">I can create carousels with lots of customizability using Swiper.</p>
                                 <a href="http://idangero.us/swiper" class="btn btn-primary hvr-grow">Check that out!</a>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
                             <div class="carlocard card card-block">
                                 <h3 class="card-title">Bootstrap v4</h3>
                                 <p class="card-text">I can make any website look nice and modern using Bootstrap v4.</p>
                                 <a href="http://v4-alpha.getbootstrap.com/" class="btn btn-primary hvr-grow">Check that out!</a>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-6 col-lg-3 revealOnScroll" data-animation="rubberBand" data-timeout="0">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
                             <div class="carlocard card card-block">
                                 <h3 class="card-title">Tooltipster</h3>
                                 <p class="card-text cardtooltip">I can create tooltips that display HTML code and images. <small>Hover over me!</small></p>
@@ -358,6 +377,24 @@
             <div class="swiper-pagination cardspage" style="margin-bottom: 30px;"></div>
             <div class="swiper-button-next cardsnext"><span class="octicon octicon-chevron-right"></span></div>
             <div class="swiper-button-prev cardsprev"><span class="octicon octicon-chevron-left"></span></div>
+        </div>
+    </div>
+    <div class="container container-other" style="margin-top: 50px">
+        <div class="row">
+            <span class="col-md-3 col-sm-1"></span>
+            <div class="col-md-6 col-sm-10">
+                <div class="carlocard card card-block">
+                    <h1 class="card-title">I can also...</h1>
+                    <h3>Add Counters: <span class="revealOnScroll" countto="5000" counterduration="3000" countereasing="easeInOutExpo" counterdelay="500" style="color: white;">0</span></h3>
+                    <h3>Use Lazy Loading: <img class="lazy" style="width: 100%; margin-top: 20px;" src="https://pixabay.com/static/uploads/photo/2015/06/01/15/09/kitten-793652_960_720.jpg" /></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid jumbotron-footer">
+        <div class="container">
+            <h1 class="display-3">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </div>
     </div>
     <script>
@@ -374,6 +411,8 @@
             separator: "|",
             speed: 2000
         });
+
+
 
         var swiper = new Swiper('.certificate', {
             pagination: '.certificatepage',
@@ -404,7 +443,13 @@
             }
         });
 
+        $(function () {
+            $("img.lazy").lazyload();
+        });
+
+        
 
     </script>
+    <script src="counter.js"></script>
 </body>
 </html>
